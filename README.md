@@ -36,3 +36,25 @@
 - I'm working in an "old laravel" way rather than utilising newer features.
 - Planned to implement quite a few things in the controllers rather than create attributes and observers.
 - Need to pay attention to proper English rules and naming conventions (Tours/Tour and Travels/Travel).
+
+
+### Lesson 2 - Public Endpoint /travels with Feature Tests
+
+#### What I did - [see commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/74199d9909a4b553526e81e72e1fe2c57787772d)
+
+- Created API endpoint
+- Created Travel Resource to only return certain fields
+- Removed Sluggable package from model - was causing some errors
+- Return all Travel db entries when api endpoint is visited
+
+#### What I could improve [see commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/68ae94e9333c23c6cc34688bbbec2a0219c068f9)
+
+- Did not add versioning to the API
+- Did not use pagination for results
+- Learnt about adding prefixes to routes
+
+#### Tests
+
+Without sounding like I gave up, I am skipping the writing tests part. 
+
+Yes I need to learn more about writing tests however coding in my spare time should be fun, it is not fun to spend time chasing environment errors that stop your tests from running. 
