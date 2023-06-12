@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/travel', [App\Http\Controllers\TravelController::class, 'index']);
+Route::get('/travel', [App\Http\Controllers\Api\V1\TravelController::class, 'index']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
