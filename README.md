@@ -55,6 +55,8 @@
 
 #### Tests
 
-Without sounding like I gave up, I am skipping the writing tests part. 
+~~ Without sounding like I gave up, I am skipping the writing tests part. 
 
-Yes I need to learn more about writing tests however coding in my spare time should be fun, it is not fun to spend time chasing environment errors that stop your tests from running. 
+Yes I need to learn more about writing tests however coding in my spare time should be fun, it is not fun to spend time chasing environment errors that stop your tests from running. ~~
+
+After sleeping on it I solved the environment errors causing the tests not to run, so I pushed a third commit with working tests and the fixes. [See commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/f228c0b819bf9a3b573861c7c3a7beb2d73d69b2)
