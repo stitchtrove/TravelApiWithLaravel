@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
 class Travel extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUuids;
 
     protected $table = 'travels';
 
@@ -19,6 +20,7 @@ class Travel extends Model
         'name',
         'description',
         'no_of_days',
+        'no_of_nights'
     ];
 
     public function sluggable(): array
@@ -28,13 +30,6 @@ class Travel extends Model
                 'source' => 'name'
             ]
         ];
-    }
-
-    public function numberOfNights(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value, $attributes) => $attributes['no_of_days'] - 1
-        );
     }
 
     public function tours(): HasMany
