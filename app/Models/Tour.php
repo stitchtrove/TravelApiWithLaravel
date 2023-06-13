@@ -15,8 +15,8 @@ class Tour extends Model
     protected $fillable = [
         'travel_id',
         'name',
-        'starting_date',
-        'ending_date',
+        'start_date',
+        'end_date',
         'price',
     ];
 
