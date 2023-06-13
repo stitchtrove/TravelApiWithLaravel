@@ -10,10 +10,9 @@ use App\Http\Resources\TourResource;
 
 class ToursController extends Controller
 {
-    public function index($slug)
+    public function index(Travel $travel)
     {
-        $travel = Travel::where('slug', $slug)->first();
-        $entries = Tour::where('travel_id', $travel->id)->orderBy('created_at', 'asc')->paginate();
+        $entries = $travel->tours()->orderBy('start_date')->paginate();
 
         return TourResource::collection($entries);
     }
