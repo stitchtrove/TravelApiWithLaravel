@@ -60,3 +60,15 @@
 Yes I need to learn more about writing tests however coding in my spare time should be fun, it is not fun to spend time chasing environment errors that stop your tests from running. ~~
 
 After sleeping on it I solved the environment errors causing the tests not to run, so I pushed a third commit with working tests and the fixes. [See commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/f228c0b819bf9a3b573861c7c3a7beb2d73d69b2)
+
+### Lesson 3 - Public Endpoint /travels/[slug]/tours with Tests
+
+#### What I did - [see commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/28258f40ac56071296ed52274b25bc7bb61cf61e)
+
+- Created API endpoint
+- Created Tour factory
+- Created Tour Resource to only return certain fields
+- Return all related Tour entries when api endpoint is visited
+- Created feature test 
+
+Note: there was some confusion over naming conventions such as Tours/Tour. This could have been planned a little better but will stick with what we have now as it doesn't cause any errors. 
