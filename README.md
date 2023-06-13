@@ -72,3 +72,10 @@ After sleeping on it I solved the environment errors causing the tests not to ru
 - Created feature test 
 
 Note: there was some confusion over naming conventions such as Tours/Tour. This could have been planned a little better but will stick with what we have now as it doesn't cause any errors. 
+
+#### What I could improve [see commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/3938393d2033027607021f287f7ba027ae6b5696)
+
+- Route Model binding - I always forget to do this 
+- Makes sense to order the results by start date
+- Format the price field when output in the api
+- Added an extra test for the formatting of the price
