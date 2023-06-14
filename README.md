@@ -92,3 +92,15 @@ Note: there was some confusion over naming conventions such as Tours/Tour. This 
 - So many tests 
 - Added sort by to the api query
 - Created a ToursListRequest file (normally I would just handle this in the controller but its good practice to do this)
+
+### Lesson 5 - Create Users: Artisan Command
+
+#### What I did - [see earlier commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/a5c5ad7d1409a4ee78c9fbb4dbdd4a70d92d6275#diff-93c812c0257339879ea0fb0d39e9e05016da9fb69df12e498a36580a1e28b94c)
+
+- I actually created the command in my first commit and was pretty happy with it.
+
+#### What I could improve [see commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/9a8bfa34ea3c1e959c9b4707d43e6762a754ce52)
+
+- Instead of requiring all parameters in a single command it now asks for details in stages 
+- Makes use of validation  
+- Created a Role seeder
