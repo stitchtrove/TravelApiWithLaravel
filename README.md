@@ -79,3 +79,16 @@ Note: there was some confusion over naming conventions such as Tours/Tour. This 
 - Makes sense to order the results by start date
 - Format the price field when output in the api
 - Added an extra test for the formatting of the price
+
+### Lesson 4 - Tours Filtering and Ordering
+
+#### What I did - [see commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/f2b56492beb9ec4afb9a04f821949655b7adcc49)
+
+- Added filters to the api query
+- Added validation for query parameters
+
+#### What I could improve [see commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/14c753a7f81a09e228aad805be09f8220f708503)
+
+- So many tests 
+- Added sort by to the api query
+- Created a ToursListRequest file (normally I would just handle this in the controller but its good practice to do this)
