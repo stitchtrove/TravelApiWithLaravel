@@ -4,8 +4,10 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\User;
-use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
+use DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 
 class CreateUser extends Command
 {
@@ -14,7 +16,7 @@ class CreateUser extends Command
      *
      * @var string
      */
-    protected $signature = 'create-user {email} {password} {role}';
+    protected $signature = 'users:create';
 
     /**
      * The console command description.
@@ -26,12 +28,33 @@ class CreateUser extends Command
     /**
      * Execute the console command.
      */
+
     public function handle()
     {
-        $user = new User();
-        $user->password = Hash::make($this->argument('password'));
-        $user->email = $this->argument('email');
-        $user->save();
-        $user->assignRole($this->argument('role'));
+
+        $user['name'] = $this->ask('Name of the new user');
+        $user['email'] = $this->ask('Email of the new user');
+        $user['password'] = $this->secret('Password of the new user');
+
+        $validator = Validator::make($user, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required', Password::defaults()],
+        ]);
+        if ($validator->fails()) {
+            foreach ($validator->errors()->all() as $error) {
+                $this->error($error);
+            }
+
+            return -1;
+        }
+
+        $roleName = $this->choice('Role of the new user', ['admin', 'editor'], 1);
+
+        DB::transaction(function () use ($user, $roleName) {
+            $user['password'] = Hash::make($user['password']);
+            $newUser = User::create($user);
+            $newUser->assignRole($roleName);
+        });
     }
 }
