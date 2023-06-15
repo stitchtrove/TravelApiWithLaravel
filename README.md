@@ -104,3 +104,13 @@ Note: there was some confusion over naming conventions such as Tours/Tour. This 
 - Instead of requiring all parameters in a single command it now asks for details in stages 
 - Makes use of validation  
 - Created a Role seeder
+
+### Lesson 6 - Admin Endpoint: Create Travels
+
+#### What I did - [see earlier commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/cc6f3862d5551aa44e398b91e3431f258a945044)
+
+- Created a POST api route
+- Created a TravelRequest to handle the incoming data
+- Added store function to the TravelController
+
+Having never worked with auth and api routes I skipped those requirements to learn from the course. 
