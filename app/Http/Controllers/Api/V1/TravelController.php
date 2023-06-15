@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Travel;
 use App\Http\Resources\TravelResource;
+use App\Http\Requests\TravelRequest;
 
 class TravelController extends Controller
 {
@@ -14,5 +14,13 @@ class TravelController extends Controller
         $entries = Travel::where('is_public', true)->orderBy('created_at', 'asc')->paginate();
 
         return TravelResource::collection($entries);
+    }
+
+    public function store(TravelRequest $request)
+    {
+        $travel = Travel::create($request->validated());
+        $travel->save();
+
+        return new TravelResource($travel);
     }
 }

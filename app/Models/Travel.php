@@ -36,4 +36,14 @@ class Travel extends Model
     {
         return $this->hasMany(Tour::class);
     }
+
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        self::creating(function ($model) {
+            $model->no_of_nights = $model->no_of_days - 1;
+        });
+    }
 }
