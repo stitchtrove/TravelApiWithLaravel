@@ -114,3 +114,9 @@ Note: there was some confusion over naming conventions such as Tours/Tour. This 
 - Added store function to the TravelController
 
 Having never worked with auth and api routes I skipped those requirements to learn from the course. 
+
+#### What I learnt/improved [see commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/cc6f3862d5551aa44e398b91e3431f258a945044)
+
+- I learnt a LOT about middleware here 
+- Create middleware to check roles
+- Created tests for the creation api end points
