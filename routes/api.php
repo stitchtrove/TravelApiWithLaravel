@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Middleware\RoleMiddleware;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/travel', [App\Http\Controllers\Api\V1\TravelController::class, 'index']);
 Route::get('/travel/{travel:slug}/tours', [App\Http\Controllers\Api\V1\ToursController::class, 'index']);
-Route::post('/travel/create', [App\Http\Controllers\Api\V1\TravelController::class, 'store']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware([RoleMiddleware::class])->group(function () {
+    Route::post('/travel/create', [App\Http\Controllers\Api\V1\TravelController::class, 'store']);
 });
+
+Route::post('login', App\Http\Controllers\Api\V1\Auth\LoginController::class)->name('login');
