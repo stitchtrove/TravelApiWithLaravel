@@ -19,6 +19,7 @@ Route::get('/travel/{travel:slug}/tours', [App\Http\Controllers\Api\V1\ToursCont
 
 Route::middleware([RoleMiddleware::class])->group(function () {
     Route::post('/travel/create', [App\Http\Controllers\Api\V1\TravelController::class, 'store']);
+    Route::post('/travel/{travel}/tours/create', [App\Http\Controllers\Api\V1\ToursController::class, 'store']);
 });
 
 Route::post('login', App\Http\Controllers\Api\V1\Auth\LoginController::class)->name('login');

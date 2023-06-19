@@ -9,6 +9,7 @@ use Illuminate\Validation\Rule;
 use App\Models\Travel;
 use App\Http\Resources\TourResource;
 use App\Http\Requests\ToursListRequest;
+use App\Http\Requests\TourRequest;
 
 class ToursController extends Controller
 {
@@ -46,5 +47,12 @@ class ToursController extends Controller
             ->paginate();
 
         return TourResource::collection($entries);
+    }
+
+    public function store(Travel $travel, TourRequest $request)
+    {
+        $travel->tours()->create($request->validated());
+
+        return new TourResource($travel);
     }
 }
