@@ -120,3 +120,17 @@ Having never worked with auth and api routes I skipped those requirements to lea
 - I learnt a LOT about middleware here 
 - Create middleware to check roles
 - Created tests for the creation api end points
+
+### Lesson 7 - Admin Endpoint: Create Tours
+
+#### What I did - [see earlier commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/04081c88d49468a9561027a25926f66cf9d67dba)
+
+Based on everything I learnt in the previous lesson, this one was pretty easy. 
+
+Even remembered the model binding in the route :) 
+
+- Created a POST api route
+- Created a TourRequest to handle the incoming data
+- Added store function to the TourController
+- Created tests
+
