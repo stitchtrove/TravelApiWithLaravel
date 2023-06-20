@@ -18,8 +18,11 @@ Route::get('/travel', [App\Http\Controllers\Api\V1\TravelController::class, 'ind
 Route::get('/travel/{travel:slug}/tours', [App\Http\Controllers\Api\V1\ToursController::class, 'index']);
 
 Route::middleware([RoleMiddleware::class])->group(function () {
-    Route::post('/travel/create', [App\Http\Controllers\Api\V1\TravelController::class, 'store']);
-    Route::post('/travel/{travel}/tours/create', [App\Http\Controllers\Api\V1\ToursController::class, 'store']);
+    Route::middleware('role:admin')->group(function () {
+        Route::post('/travel/create', [App\Http\Controllers\Api\V1\TravelController::class, 'store']);
+        Route::post('/travel/{travel}/tours/create', [App\Http\Controllers\Api\V1\ToursController::class, 'store']);
+    });
+    Route::put('/travel/{travel}', [App\Http\Controllers\Api\V1\TravelController::class, 'update']);
 });
 
 Route::post('login', App\Http\Controllers\Api\V1\Auth\LoginController::class)->name('login');
