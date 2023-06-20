@@ -134,3 +134,12 @@ Even remembered the model binding in the route :)
 - Added store function to the TourController
 - Created tests
 
+### Lesson 8 - Admin Endpoint: Edit Travel
+
+#### What I did - [see earlier commit](https://github.com/stitchtrove/TravelApiWithLaravel/commit/819d5c2368cdf023177d120febdb055a8429c894)
+
+Again, fairly straightforward using what I'd already learnt.
+
+- Created a PUT api route
+- Added update function to the TourController
+- Created tests
