@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
+    /**
+     * POST Login
+     *
+     * Login with the existing user.
+     *
+     * @response {"access_token":"1|a9ZcYzIrLURVGx6Xe41HKj1CrNsxRxe4pLA2oISo"}
+     * @response 422 {"error": "The provided credentials are incorrect."}
+     */
     public function __invoke(LoginRequest $request)
     {
         $user = User::where('email', $request->email)->first();
